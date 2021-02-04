@@ -18,8 +18,7 @@ class Question:
             label = Label(view, text="Wrong!")
         label.pack()
         view.after(1000, lambda *args: self.unpackView(view))#Lambda — это инструмент в python для вызова анонимных функций
-    def buttonCallback():
-     messagebox.showinfo("Уведомление", "Вы нажали на кнопку")
+    
 
   
  
@@ -48,7 +47,7 @@ def askQuestion():
     index += 1
     questions[index].getView(window).pack()#getView() метод в адаптере предназначен для создания представления элемента Listbox
 
-
+     
 questions = []
 file = open("questions.txt", "r")
 line = file.readline()
@@ -72,7 +71,7 @@ window.geometry("600x400")
 window.configure(background="purple")
 button = Button(window,bg="orange",fg="brown",height=3,width=9, text="Start", command=askQuestion)
 button_two= Button(window,bg="green",fg="blue",height=3,width=9, text = "Quit", command = quit)
-button_three = Button(height=3,width=9, text = "Screen resolution", bg = "pink",fg="blue",command=lambda:window.geometry("900x700"))
+button_three = Button(height=3,width=12, text = "Screen resolution", bg = "pink",fg="blue",command=lambda:window.geometry("900x700"))
 button_four = Button(height=3,width=9,text = "Color", bg = "lightblue",fg="purple",command=lambda:window.config(bg="blue"))
 button.pack()
 button_five = Button(height=3,width=9,fg="orange",bg="coral",text="Click", command=lambda:buttonCallback)
